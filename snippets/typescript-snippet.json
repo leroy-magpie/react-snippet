@@ -1,0 +1,40 @@
+{
+  "index导出组件": {
+    "prefix": "ext",
+    "body": [
+      "import ${1:temp} from './${1:temp}';",
+      "",
+      "export * from './${1:temp}';",
+      "",
+      "export default ${1:temp};"
+    ],
+    "description": ""
+  },
+  "connect包裹": {
+    "prefix": "imc",
+    "body": [
+      "import { connect } from 'react-redux';",
+      "",
+      "import ${1:temp} from './${1:temp}';",
+      "",
+      "const mapState2Props = state => ({",
+      "",
+      "});",
+      "",
+      "const mapDispatch2Prop = {",
+      "",
+      "};",
+      "",
+      "export default connect(mapState2Props, mapDispatch2Prop)(${1:temp});"
+    ]
+  },
+  "index导出connector组件": {
+    "prefix": "exc",
+    "body": [
+      "import ${1:temp} from './connector';",
+      "",
+      "export default ${1:temp};"
+    ],
+    "description": ""
+  }
+}

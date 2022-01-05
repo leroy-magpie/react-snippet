@@ -1,0 +1,135 @@
+{
+  "引入": {
+    "prefix": "im",
+    "body": ["import ${1:react} from '${1:react}';"]
+  },
+  "注释": {
+    "prefix": "zs",
+    "body": ["/** $1 */"]
+  },
+  "函数组件": {
+    "prefix": "rf",
+    "body": [
+      "import React, { memo } from 'react';",
+      "",
+      "import './${1:temp}.less';",
+      "",
+      "export interface IProps {",
+      "  emp?: string;",
+      "}",
+      "",
+      "const ${1:temp}: React.FC<IProps> = memo(() => {",
+      "  return (",
+      "    <div>a</div>",
+      "  );",
+      "})",
+      "",
+      "${1:temp}.displayName = '${1:temp}'",
+      "",
+      "export default ${1:temp};",
+      ""
+    ]
+  },
+  "react connect模版": {
+    "prefix": "rcc",
+    "body": [
+      "import React, { PureComponent } from 'react';",
+      "import { connect } from 'react-redux';",
+      "",
+      "import './${1:temp}.less';",
+      "",
+      "export interface IPropsExternal {",
+      "  emp?: string;",
+      "}",
+      "",
+      "interface IPropsConnected {",
+      "  emp?: string;",
+      "}",
+      "",
+      "type IProps = IPropsExternal & IPropsConnected;",
+      "",
+      "const mapStateToProps = state => ({",
+      "",
+      "});",
+      "",
+      "const mapDispatchToProps = {",
+      "",
+      "};",
+      "",
+      "@connect(mapStateToProps, mapDispatchToProps)",
+      "class ${1:temp} extends PureComponent<IProps> {",
+      "  render() {",
+      "    return (",
+      "      <div>${2:a}</div>",
+      "    );",
+      "  }",
+      "}",
+      "",
+      "export default ${1:temp} as React.ComponentClass<IPropsExternal>;",
+      ""
+    ]
+  },
+  "react 普通模版": {
+    "prefix": "rc",
+    "body": [
+      "import React, { PureComponent } from 'react';",
+      "",
+      "import './${1:temp}.less';",
+      "",
+      "export interface IPropsExternal {",
+      "  emp?: string;",
+      "}",
+      "",
+      "type IProps = IPropsExternal;",
+      "",
+      "class ${1:temp} extends PureComponent<IProps> {",
+      "  render() {",
+      "    return (",
+      "      <div>a</div>",
+      "    );",
+      "  }",
+      "}",
+      "",
+      "export default ${1:temp};",
+      ""
+    ]
+  },
+  "默认props": {
+    "prefix": "dp",
+    "body": ["static defaultProps = {", "  ${1:name}:", "}", ""]
+  },
+  "state": {
+    "prefix": "ds",
+    "body": ["readonly state = {", "  ${1:name}:", "}", ""]
+  },
+  "解构 props": {
+    "prefix": "gp",
+    "body": ["const { $1 } = this.props;", "$2"]
+  },
+  "解构 state": {
+    "prefix": "gs",
+    "body": ["const { $1 } = this.state;", "$2"]
+  },
+  "setState": {
+    "prefix": "cs",
+    "body": ["this.setState({ ${1:name} })", "$2"]
+  },
+  "私有方法": {
+    "prefix": "pvh",
+    "body": ["private ${1:handle} = ($2) => {", "  ${3:this}", "}", ""]
+  },
+  "数据层": {
+    "prefix": "tr",
+    "body": [
+      "try {",
+      "  await ${1:handle2}()",
+      "} catch (e) {",
+      "  console.error(e);",
+      "}"
+    ]
+  },
+  "className": {
+    "prefix": "cl",
+    "body": ["className=\"$1\""]
+  }
+}
