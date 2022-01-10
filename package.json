@@ -2,8 +2,8 @@
   "name": "react-snippet",
   "displayName": "react-snippet",
   "description": "react 用户代码片段",
-  "publisher": "leroy",
-  "version": "0.0.1",
+  "publisher": "leroy-magpie",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/leroy-magpie/react-snippet.git"

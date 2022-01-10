@@ -1,4 +1,24 @@
 {
+  "引入": {
+    "prefix": "im",
+    "body": ["import ${1:React} from '${2:react}';"]
+  },
+  "注释": {
+    "prefix": "zs",
+    "body": ["/** $1 */"]
+  },
+  "解构对象": {
+    "prefix": "go",
+    "body": ["const { $2 } = $1;"]
+  },
+  "方法": {
+    "prefix": "h",
+    "body": ["const handle${1} = ($2) => {", "  ${3}", "};", ""]
+  },
+  "私有方法": {
+    "prefix": "ph",
+    "body": ["private ${1:handle} = ($2) => {", "  ${3}", "}", ""]
+  },
   "index导出组件": {
     "prefix": "ext",
     "body": [

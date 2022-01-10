@@ -1,11 +1,65 @@
 {
   "引入": {
     "prefix": "im",
-    "body": ["import ${1:react} from '${1:react}';"]
+    "body": ["import ${1:React} from '${2:react}';"]
   },
   "注释": {
     "prefix": "zs",
     "body": ["/** $1 */"]
+  },
+  "默认 props": {
+    "prefix": "dp",
+    "body": ["static defaultProps = {", "  ${1:name}:", "}", ""]
+  },
+  "默认 state": {
+    "prefix": "ds",
+    "body": ["readonly state = {", "  ${1:name}:", "}", ""]
+  },
+  "解构 props": {
+    "prefix": "gp",
+    "body": ["const { $1 } = props;"]
+  },
+  "解构 this.props": {
+    "prefix": "gtp",
+    "body": ["const { $1 } = this.props;"]
+  },
+  "解构 useState": {
+    "prefix": "gs",
+    "body": ["const [${1:data}, set${1:data}] = useState();"]
+  },
+  "解构 this.state": {
+    "prefix": "gts",
+    "body": ["const { $1 } = this.state;"]
+  },
+  "解构对象": {
+    "prefix": "go",
+    "body": ["const { $2 } = $1;"]
+  },
+  "setState": {
+    "prefix": "cs",
+    "body": ["this.setState({ ${1:name} });"]
+  },
+  "方法": {
+    "prefix": "h",
+    "body": ["const handle${1} = ($2) => {", "  ${3}", "};", ""]
+  },
+  "私有方法": {
+    "prefix": "ph",
+    "body": ["private ${1:handle} = ($2) => {", "  ${3}", "}", ""]
+  },
+  "数据层": {
+    "prefix": "tr",
+    "body": [
+      "try {",
+      "  await ${1:handle}()",
+      "} catch (e) {",
+      "  console.error(e);",
+      "}"
+    ]
+  },
+  "className": {
+    "prefix": "cl",
+    "body": ["className=\"$1\""]
   },
   "函数组件": {
     "prefix": "rf",
@@ -30,7 +84,32 @@
       ""
     ]
   },
-  "react connect模版": {
+  "react 普通模版": {
+    "prefix": "rc",
+    "body": [
+      "import React, { PureComponent } from 'react';",
+      "",
+      "import './${1:temp}.less';",
+      "",
+      "export interface IPropsExternal {",
+      "  emp?: string;",
+      "}",
+      "",
+      "type IProps = IPropsExternal;",
+      "",
+      "class ${1:temp} extends PureComponent<IProps> {",
+      "  render() {",
+      "    return (",
+      "      <div>a</div>",
+      "    );",
+      "  }",
+      "}",
+      "",
+      "export default ${1:temp};",
+      ""
+    ]
+  },
+  "react connect 模版": {
     "prefix": "rcc",
     "body": [
       "import React, { PureComponent } from 'react';",
@@ -68,68 +147,5 @@
       "export default ${1:temp} as React.ComponentClass<IPropsExternal>;",
       ""
     ]
-  },
-  "react 普通模版": {
-    "prefix": "rc",
-    "body": [
-      "import React, { PureComponent } from 'react';",
-      "",
-      "import './${1:temp}.less';",
-      "",
-      "export interface IPropsExternal {",
-      "  emp?: string;",
-      "}",
-      "",
-      "type IProps = IPropsExternal;",
-      "",
-      "class ${1:temp} extends PureComponent<IProps> {",
-      "  render() {",
-      "    return (",
-      "      <div>a</div>",
-      "    );",
-      "  }",
-      "}",
-      "",
-      "export default ${1:temp};",
-      ""
-    ]
-  },
-  "默认props": {
-    "prefix": "dp",
-    "body": ["static defaultProps = {", "  ${1:name}:", "}", ""]
-  },
-  "state": {
-    "prefix": "ds",
-    "body": ["readonly state = {", "  ${1:name}:", "}", ""]
-  },
-  "解构 props": {
-    "prefix": "gp",
-    "body": ["const { $1 } = this.props;", "$2"]
-  },
-  "解构 state": {
-    "prefix": "gs",
-    "body": ["const { $1 } = this.state;", "$2"]
-  },
-  "setState": {
-    "prefix": "cs",
-    "body": ["this.setState({ ${1:name} })", "$2"]
-  },
-  "私有方法": {
-    "prefix": "pvh",
-    "body": ["private ${1:handle} = ($2) => {", "  ${3:this}", "}", ""]
-  },
-  "数据层": {
-    "prefix": "tr",
-    "body": [
-      "try {",
-      "  await ${1:handle2}()",
-      "} catch (e) {",
-      "  console.error(e);",
-      "}"
-    ]
-  },
-  "className": {
-    "prefix": "cl",
-    "body": ["className=\"$1\""]
   }
 }
