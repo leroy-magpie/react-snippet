@@ -3,7 +3,7 @@
   "displayName": "react-snippet",
   "description": "react 用户代码片段",
   "publisher": "leroy-magpie",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "repository": {
     "type": "git",
     "url": "https://github.com/leroy-magpie/react-snippet.git"

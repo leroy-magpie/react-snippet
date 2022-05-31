@@ -88,7 +88,7 @@ this.setState({  });
 
 ---
 
-## h [方法]
+## ch [方法]
 
 ```js
 const handle = () => {
